@@ -1,0 +1,155 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #EEFBFB;
+    background: #203647;
+}
+
+h1 {
+    background: rgba(18, 35, 46, 0.8);
+    margin-top: 0;
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+}
+
+p {
+    margin: 3px 0;
+}
+
+.box {
+    width: 30%;
+    border-radius: 30px;
+    background-color: #12232e;
+    box-shadow: 10px 5px 20px 5px black;
+    margin: 40px auto;
+}
+
+div {
+    margin: auto;
+    padding: 10px;
+}
+
+button {
+    background-color: #007CC7;
+    color: black;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 6px 18px;
+    border: 2px solid #11131b;
+    transition-duration: 0.4s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007CC7;
+    color: #EEFBFB;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.deleteButton {
+    background-color: #b95454;
+}
+.deleteButton:hover {
+    background-color: #693131;
+}
+
+.photoButtons {
+    padding: 6px;
+}
+
+.btn-group {
+    padding: 5px 12px;
+    border-radius: 0;
+}
+
+#additionalInfo,
+input {
+    width: 80%;
+    font-size: 1rem;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+
+#addToppingButton {
+    background-color: #576277;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+#toppingList {
+    padding: 0;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+#pizzaHeat {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    border-radius: 5px;
+    background: #b95454;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#pizzaHeat::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 25px;
+    border-radius: 50%;
+    background: #bb0000;
+    cursor: pointer;
+}
+
+#pizzaHeat::-moz-range-thumb {
+    width: 23px;
+    height: 25px;
+    border-radius: 50%;
+    background: #bb0000;
+    cursor: pointer;
+}
+
+.pizzaMenuPhoto {
+    border-radius: 20px;
+    width: 193px;
+    height: 210;
+    margin: 10px;
+    border: 4px solid black;
+    box-shadow: 1px 1px 5px black;
+}
+
+#additionalInfo {
+    resize: none;
+}
+
+.chilli {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    transform: translateY(4px) translateX(8px);
+
+}
+
+  
+ 

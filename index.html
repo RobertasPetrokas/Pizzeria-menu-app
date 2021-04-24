@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Pizzeria menu</title>
+</head>
+
+<body>
+
+
+    <h1 class="center">Add a new pizza</h1>
+
+
+    <form id="addForm" class="center box">
+
+        <div class="name">
+            <label for="pizzaName">Name</label>
+            <br>
+            <input type="string" placeholder="(required)" id="pizzaName" name="pizzaName" maxlength="30" required>
+            <br>
+        </div>
+
+        <div class="price">
+            <label for="pizzaPrice">Price</label>
+            <br>
+            <input type="number" placeholder="(required)" id="pizzaPrice" name="pizzaPrice" min="0.01" step="0.01"
+                required>
+            <br>
+        </div>
+
+        <div class="heat">
+            <label for="pizzaHeat">Heat</label>
+            <br>
+            <input type="range" id="pizzaHeat" name="pizzaHeat" min="0" max="3" value="0">
+            <br>
+            <output id="heatOutput">0</output>
+
+        </div>
+
+        <div class="toppings">
+            <label for="pizzaToppings">Toppings</label>
+            <br>
+            <input type="string" placeholder="(min. 2 required)" name="pizzaToppings" id="pizzaToppings" required>
+            <br>
+            <p id="toppingList"></p>
+            <button type="button" id="addToppingButton" onclick="addTopping()">Add Topping</button>
+        </div>
+
+        <div class="photo center">
+            <label>Photo</label>
+            <br>
+            <img class="pizzaMenuPhoto" id="pizzaPhoto" src="/img/0.png" alt="">
+            <br>
+            <button type="button" class="photoButtons" onclick="prevPhoto()">
+                <<</button> <button type="button" class="photoButtons" onclick="nextPhoto()">>>
+            </button>
+        </div>
+
+        <div class="additionalInfo center">
+            <label for="additionalInfo">Additional information</label>
+            <textarea id="additionalInfo" placeholder="(optional)" name="additionalInfo" rows="4"
+                cols="50"></textarea>
+        </div>
+
+        <div>
+            <button type="button" onclick="savePizza()">Add Pizza</button>
+        </div>
+
+    </form>
+
+    <div class="center">
+        <a href="/menu.html"><button>Pizza menu</button></a><br>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
