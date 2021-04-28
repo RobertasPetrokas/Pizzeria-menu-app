@@ -102,6 +102,16 @@ function renderList() {
         pizzaHTML.appendChild(pizzaProps);
 
     });
+
+
+    let backBtn = document.createElement("button");
+    backBtn.appendChild(document.createTextNode("<< Go back"));
+    pizzaHTML.appendChild(backBtn);
+
+    backBtn.addEventListener("click", () => {
+        window.location.replace("/index.html");
+    });
+    
 }
 
 
@@ -110,10 +120,3 @@ if (pizzaList !== null) {
     renderList();
 };
 
-let backBtn = document.createElement("button");
-backBtn.appendChild(document.createTextNode("<< Go back"));
-pizzaHTML.appendChild(backBtn);
-
-backBtn.addEventListener("click", () => {
-    window.location.replace("/index.html");
-});
