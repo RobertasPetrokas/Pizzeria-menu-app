@@ -49,7 +49,7 @@ function renderList() {
         // Heat (Chilli peppers)
         if (pizza.heat > 0) {
             let heat = document.createElement("img")
-            heat.src = "/img/chili" + pizza.heat + ".png"
+            heat.src = "./img/chili" + pizza.heat + ".png"
             heat.classList.add("chilli")
             pizzaProps.appendChild(heat);
         }
@@ -69,7 +69,7 @@ function renderList() {
         // Pizza photo
         if (pizza.photo > 0) {
             let img = document.createElement("img");
-            img.src = "/img/" + pizza.photo + ".png";
+            img.src = "./img/" + pizza.photo + ".png";
             img.classList.add("pizzaMenuPhoto");
             pizzaProps.appendChild(img);
         }
@@ -109,7 +109,7 @@ function renderList() {
     pizzaHTML.appendChild(backBtn);
 
     backBtn.addEventListener("click", () => {
-        window.location.replace("/index.html");
+        window.location.replace("./index.html");
     });
     
 }

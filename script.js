@@ -55,7 +55,7 @@ function savePizza () {
         pizzaHeatOutput.innerHTML = "0";
         toppings = [];
         toppingList.innerHTML = "";
-        pizzaPhoto.src = "/img/0.png";
+        pizzaPhoto.src = "./img/0.png";
         pizzaPhoto.value = 0;
     }
 }
@@ -81,12 +81,12 @@ pizzaHeat.oninput = function () {
 function prevPhoto () {
     pizzaPhoto.value--;
     if (pizzaPhoto.value < 0) pizzaPhoto.value = 10;
-    pizzaPhoto.src = "/img/" + pizzaPhoto.value + ".png";
+    pizzaPhoto.src = "./img/" + pizzaPhoto.value + ".png";
     console.log(pizzaPhoto.value);
 }
 
 function nextPhoto () {
     pizzaPhoto.value++;
     if (pizzaPhoto.value > 10) pizzaPhoto.value = 0;
-    pizzaPhoto.src = "/img/" + pizzaPhoto.value + ".png";
+    pizzaPhoto.src = "./img/" + pizzaPhoto.value + ".png";
 }
