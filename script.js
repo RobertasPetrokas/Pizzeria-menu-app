@@ -19,46 +19,54 @@ function savePizza () {
         return;
     } else if (pizzaList !== null) {
         var isDuplicate = false;
-        pizzaList.map(pizza => {
+        pizzaList.forEach(pizza => {
             if (pizza.name === pizzaName.value) {
                 alert(pizza.name + " is already in the menu!");
                 isDuplicate = true;
             }
         });
     }
-    if (pizzaPrice.value === null && !isDuplicate) {
+
+    if(isDuplicate) return;
+
+    if (pizzaPrice.value === "") {
         alert("Please enter the price!");
         return;
-    } else if (toppings.length < 2 && !isDuplicate) {
+    } 
+    else if (pizzaPrice.value <= 0) {
+        alert("Price must be positive number!");
+        return;
+    }
+    else if (toppings.length < 2) {
         alert("Choose at least 2 toppings!");
         return;
     };
 
 
-    if (!isDuplicate) {
-        var pizza = {
-            name: pizzaName.value,
-            price: pizzaPrice.value,
-            heat: pizzaHeat.value,
-            toppings: toppings,
-            photo: pizzaPhoto.value,
-            additionalInfo: pizzaAdditionalInfo.value
-        };
 
-        if (pizzaList === null) {
-            sessionStorage.setItem("pizza_list", JSON.stringify([pizza]));
-        } else {
-            sessionStorage.setItem("pizza_list", JSON.stringify([...pizzaList, pizza]));
-        }
+    var pizza = {
+        name: pizzaName.value,
+        price: pizzaPrice.value,
+        heat: pizzaHeat.value,
+        toppings: toppings,
+        photo: pizzaPhoto.value,
+        additionalInfo: pizzaAdditionalInfo.value
+    };
 
-        document.getElementById("addForm").reset();
-        pizzaHeatOutput.innerHTML = "0";
-        toppings = [];
-        toppingList.innerHTML = "";
-        pizzaPhoto.src = "./img/0.png";
-        pizzaPhoto.value = 0;
+    if (pizzaList === null) {
+        sessionStorage.setItem("pizza_list", JSON.stringify([pizza]));
+    } else {
+        sessionStorage.setItem("pizza_list", JSON.stringify([...pizzaList, pizza]));
     }
+
+    document.getElementById("addForm").reset();
+    pizzaHeatOutput.innerHTML = "0";
+    toppings = [];
+    toppingList.innerHTML = "";
+    pizzaPhoto.src = "./img/0.png";
+    pizzaPhoto.value = 0;
 }
+
 
 function addTopping () {
 
@@ -82,7 +90,6 @@ function prevPhoto () {
     pizzaPhoto.value--;
     if (pizzaPhoto.value < 0) pizzaPhoto.value = 10;
     pizzaPhoto.src = "./img/" + pizzaPhoto.value + ".png";
-    console.log(pizzaPhoto.value);
 }
 
 function nextPhoto () {

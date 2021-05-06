@@ -4,7 +4,7 @@ var pizzaHTML = document.getElementById("pizzaMenu");
 
 
 function createSortBtn(type, btnDiv) {
-    let btn = document.createElement("button");
+    var btn = document.createElement("button");
     btn.type = "button";
     btn.classList.add("btn-group");
     btnDiv.appendChild(btn);
@@ -29,7 +29,7 @@ function sort(prop) {
 function renderList() {
 
     // Sort Buttons
-    let btnDiv = document.createElement("div");
+    var btnDiv = document.createElement("div");
 
     createSortBtn("name", btnDiv);
     createSortBtn("price", btnDiv);
@@ -39,7 +39,7 @@ function renderList() {
 
     pizzaList.forEach(pizza => {
 
-        let pizzaProps = document.createElement("li");
+        var pizzaProps = document.createElement("li");
         pizzaProps.classList.add("box");
 
         // Name
@@ -48,27 +48,27 @@ function renderList() {
 
         // Heat (Chilli peppers)
         if (pizza.heat > 0) {
-            let heat = document.createElement("img")
+            var heat = document.createElement("img")
             heat.src = "./img/chili" + pizza.heat + ".png"
             heat.classList.add("chilli")
             pizzaProps.appendChild(heat);
         }
 
         // Price
-        let price = document.createElement("p");
+        var price = document.createElement("p");
         price.innerText = "Price: " + pizza.price + " €";
         pizzaProps.appendChild(price);
 
 
 
         // Toppings
-        let toppings = document.createElement("p");
+        var toppings = document.createElement("p");
         toppings.innerText = "Toppings: " + pizza.toppings;
         pizzaProps.appendChild(toppings);
 
         // Pizza photo
         if (pizza.photo > 0) {
-            let img = document.createElement("img");
+            var img = document.createElement("img");
             img.src = "./img/" + pizza.photo + ".png";
             img.classList.add("pizzaMenuPhoto");
             pizzaProps.appendChild(img);
@@ -76,14 +76,14 @@ function renderList() {
 
         // Additional Information
         if (pizza.additionalInfo !== "") {
-            let additionalInfo = document.createElement("p");
+            var additionalInfo = document.createElement("p");
             additionalInfo.innerText = "Additional information: " + pizza.additionalInfo;
             pizzaProps.appendChild(additionalInfo);
             pizzaProps.appendChild(document.createElement("br"));
         }
 
         // Delete Button
-        let deleteBtn = document.createElement("button");
+        var deleteBtn = document.createElement("button");
         deleteBtn.appendChild(document.createTextNode("Delete"));
         deleteBtn.classList.add("deleteButton");
         pizzaProps.appendChild(document.createElement('br'));
@@ -92,7 +92,7 @@ function renderList() {
         deleteBtn.addEventListener("click", () => {
             if (confirm("Are you sure that you want to delete this pizza from the menu?")) {
                 var newMenu = pizzaList.filter(pizzaToRemove => {
-                    return pizzaToRemove != pizza
+                    return pizzaToRemove.name != pizza.name
                 })
                 sessionStorage.setItem("pizza_list", JSON.stringify(newMenu));
                 pizzaHTML.removeChild(pizzaProps);
@@ -101,15 +101,6 @@ function renderList() {
 
         pizzaHTML.appendChild(pizzaProps);
 
-    });
-
-
-    let backBtn = document.createElement("button");
-    backBtn.appendChild(document.createTextNode("<< Go back"));
-    pizzaHTML.appendChild(backBtn);
-
-    backBtn.addEventListener("click", () => {
-        window.location.replace("./index.html");
     });
     
 }
